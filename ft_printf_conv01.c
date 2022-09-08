@@ -42,13 +42,8 @@ int	ft_printf_p(unsigned long long num)
 	iter = 19;
 	res = 0;
 	ftp_bzero(str, 20);
-	if (num != 0)
-	{
-		res += write(1, &"0x", 2);
-		ftp_ulltohex(str, num, 'x');
-		res += ft_printf_s(str);
-	}
-	else
-		res += write(1, "(nil)", 5);
+	res += write(1, &"0x", 2);
+	ftp_ulltohex(str, num, 'x');
+	res += ft_printf_s(str);
 	return (res);
 }
